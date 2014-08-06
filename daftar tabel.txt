@@ -1,0 +1,23 @@
+--pengguna
+SELECT [USERNAME], [pass] FROM [DB_RemcoInsentif].[dbo].[PENGGUNA]
+
+--naive bayes
+SELECT [Tahun], [Bulan], [P_Absensi], [P_Penampilan], [P_Sikap], [P_Lama_Kerja], [Insentif], [Nilai_Ya], [Nilai_Tidak], [Insentif_Diambil] FROM [DB_RemcoInsentif].[dbo].[Naive_Bayes]
+
+--hasil akhir
+SELECT [Id_Karyawan], [hasil] FROM [DB_RemcoInsentif].[dbo].[hasil_akhir]
+
+--history_insentif
+SELECT [Period_Name], [Absensi], [Penampilan], [Sikap], [Lama_Kerja], [Insentif] FROM [DB_RemcoInsentif].[dbo].[History_Insentif]
+
+--karyawan
+SELECT [Nama], [Alamat], [Jenis_Kelamin], [Tgl_Masuk], [Status_Karyawan], [Jabatan] FROM [DB_RemcoInsentif].[dbo].[Karyawan]
+
+-- tampilkan semua data
+select * from v_naive_bayes
+
+-- hapus semua
+delete from history_insentif
+
+-- hapus histori yg id karyawanny 20140201
+delete from history_insentif where id_karyawan = '20140201'
